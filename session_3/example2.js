@@ -1,1 +1,3 @@
-// Globals ., type , __filename,  __dirname, timers , process.argv 
+//Pseudo Global Examples
+const primeNumber = require("./support/primenumber.js");
+

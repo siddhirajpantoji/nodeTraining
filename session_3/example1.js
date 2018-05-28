@@ -1,1 +1,4 @@
-// Type of Require and Export Folders 
+// True Globals Examples
+console.log("--------------------- True Global Examples ------------------")
+
+

@@ -1,1 +1,3 @@
-// OS Module memory Details  
+// Path package 
+const path = require("path");
+

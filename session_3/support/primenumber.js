@@ -17,4 +17,11 @@ function isPrimeNumber(num) {
         return false;
     }
 }
+
+exports.abc = isPrimeNumber
+// console.log(module.exports);
+// console.log(exports);
+
 module.exports.isPrimeNumber = isPrimeNumber
+// console.log(module.exports);
+// console.log(exports);
