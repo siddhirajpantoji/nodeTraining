@@ -17,4 +17,4 @@ function isPrimeNumber(num) {
         return false;
     }
 }
-module.exports.isPrime = isPrimeNumber
+module.exports.isPrimeNumber = isPrimeNumber
