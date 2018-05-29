@@ -2,16 +2,19 @@
 const fs = require("fs");
 //const primeNumber = require("./support/primenumber");
 // Create file folder in sesson_3 directory 
-fs.appendFileSync("./file/TestFile.txt", "This is a test file", function(err){
+fs.appendFile("./file/TestFile.txt", "This is a test file", function(err){
     if(err){
         console.log(err);
     }
+    else{
+        fs.readFile("./file/TestFile.txt","UTF-8", function(err, data){
+            if (err){
+                console.error("This is error while File Reading", err);
+            }else{
+                console.log(data);
+            }
+        })
+    }
 });
 
-fs.readFile("./file/TestFile.txt","UTF-8", function(err, data){
-    if (err){
-        console.error("This is error while File Reading", err.stack);
-    }else{
-        console.log(data);
-    }
-})
+

@@ -19,9 +19,9 @@ function isPrimeNumber(num) {
 }
 
 exports.abc = isPrimeNumber
-// console.log(module.exports);
-// console.log(exports);
+ console.log(module.exports);
+ console.log(exports);
 
 module.exports.isPrimeNumber = isPrimeNumber
-// console.log(module.exports);
-// console.log(exports);
+ console.log(module.exports);
+ console.log(exports);
