@@ -8,4 +8,4 @@
 var express = require('express');
 var app = express();
 app.use('/', express.static(__dirname)); // Creates a static Server 
-app.listen(3000); //the port you want to usenode
+app.listen(3000); //the port you want to use
