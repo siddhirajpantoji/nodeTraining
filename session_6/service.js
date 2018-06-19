@@ -1,7 +1,7 @@
 
 function getResp(name){
     return new Promise(function(resolve,reject){
-        var err = null;
+        var err = true;
         if(err){
             reject(err);
         }
