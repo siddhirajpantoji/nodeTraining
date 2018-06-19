@@ -8,10 +8,10 @@
 
   const {Pool} = require ("pg");
   const pool = new Pool({
-    user: 'postgres',
+    user: 'XXXXXXXX',
     host: 'localhost',
-    database: 'NodeSessionDB',
-    password: 'root',
+    database: 'XXXXXX',
+    password: 'XXXXX',
     port: 5432,
     idleTimeoutMillis:3000
   });
@@ -34,7 +34,9 @@
   }
   
   function insertEmployee(){
-    pool.query("insert into employee values ($1,$2, $3, $4, $5) returning *",[employee.fname, employee.lname, employee.desig, employee.salary, employee.dept], (err, data) => {
+    pool.query("insert into employee values ($1,$2, $3, $4, $5) returning *",
+    [employee.fname, employee.lname, employee.desig, employee.salary, employee.dept], 
+    (err, data) => {
       if (err){
         console.log(err);
       } else {
