@@ -8,7 +8,7 @@ function makeClass(phrase) {
   }
   
   let User = makeClass("Hello");
-  
+//  console.log(User);
   new User().sayHi(); // Hello
 
 

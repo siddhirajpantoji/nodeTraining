@@ -1,8 +1,9 @@
 class User {
 
-    constructor(name) {
+    constructor(name, age) {
       // invokes the setter
       this.name = name;
+      this.age = age;
     }
   
     get name() {
@@ -19,8 +20,11 @@ class User {
   
   }
   
-  let user = new User("John");
-  console.log(user.name); // John
+  let user = new User("John", 12);
+  console.log(user); // John
   
   user = new User(""); // Name too short.
-  
+  var xyz = {
+    "name":"Sidd"
+  }
+  console.log(xyz);
