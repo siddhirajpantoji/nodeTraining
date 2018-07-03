@@ -8,7 +8,7 @@ function createEmployee(req, res) {
         salary: req.body.salary,
     }
     employeeService.createEmployee(employee, function (err, data) {
-        commonFunction(err,data);
+        commonFunction(req,res,err,data);
     })
 }
 
@@ -22,7 +22,7 @@ function updateEmployee(req, res) {
         salary: req.body.salary,
     }
     employeeService.updateEmployee(employee, function (err, data) {
-        commonFunction(err,data);
+        commonFunction(req,res,err,data);
     })
 }
 
@@ -35,7 +35,7 @@ function getAllEmployees(req, res) {
     //     salary: req.body.salary,
     // }
     employeeService.getAllEmployee(function (err, data) {
-        commonFunction(err,data);
+        commonFunction(req,res,err,data);
     })
 }
 
@@ -48,10 +48,10 @@ function deleteEmployee(req, res) {
         salary: req.body.salary,
     }
     employeeService.deleteEmployee(employee, function (err, data) {
-        commonFunction(err,data);
+        commonFunction(req,res,err,data);
     })
 }
-var commonFunction = function (err, data) {
+var commonFunction = function (req,res,err, data) {
     if (err) {
         utils.Error500(req, res, err);
     } else {
