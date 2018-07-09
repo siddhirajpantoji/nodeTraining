@@ -4,7 +4,7 @@ function createEmployee(employeeObj, callback) {
     var emp1 = new Employee(employeeObj);
     employees.push(emp1);
     Employee.create(employees, function (err, res) {
-        CommonFunction(err,data,callback);
+        CommonFunction(err,res,callback);
     });
 }
 
@@ -19,7 +19,7 @@ function getAllEmployee(callback) {
             var userMap = {};
 
             employees.forEach(function (employee) {
-                userMap[user._id] = employee;
+                userMap[employee._id] = employee;
             });
             callback(null, employees);
         }
@@ -28,7 +28,10 @@ function getAllEmployee(callback) {
 
 function updateEmployee(employeeObj, callback) {
     var id = employeeObj.id
-    Employee.findByIdAndUpdate(id, employeeObj, (err,data)=>{
+    if(!id){
+        callback("Id is Required ")
+    }
+    Employee.findByIdAndUpdate({_id:id}, employeeObj,{new:true}, (err,data)=>{
         CommonFunction(err,data,callback);
     });
 }

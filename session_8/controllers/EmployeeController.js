@@ -45,7 +45,7 @@ function deleteEmployee(req, res) {
         name: req.body.name,
         address: req.body.address,
         position: req.body.position,
-        salary: req.body.salary,
+        salary: req.body.salary
     }
     employeeService.deleteEmployee(employee, function (err, data) {
         commonFunction(req,res,err,data);
