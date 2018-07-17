@@ -30,7 +30,8 @@ function closeDBConnection() {
     }))
 }
 
-function createEmployee(employeeObj, callback) {
+function createEmployee(employeeObj, callback) 
+{
     getDbConnection(function (err) {
         if (err) {
             return callback(err);
@@ -38,6 +39,7 @@ function createEmployee(employeeObj, callback) {
         var employees = new Array();
         var emp1 = new Employee(employeeObj);
         employees.push(emp1);
+        
         Employee.create(employees, function (err, res) {
             CommonFunction(err, res, callback);
         });
