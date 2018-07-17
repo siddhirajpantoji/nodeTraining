@@ -1,6 +1,6 @@
-const Employee = require('../models/Employee');
-const mongoose = require('mongoose');
-const configs = require('../config/config');
+const db = require('../daoLayer/db');
+const empDao = require('../daoLayer/employeeDao');
+
 /**
  * Creates connection to DB 
  * @param {*} callback 
@@ -20,54 +20,81 @@ function getDbConnection(callback) {
  * Close DB Connection 
  */
 function closeDBConnection() {
-    mongoose.connection.close((err => {
-        if (err) {
-            console.error("Unable to close Connection ", err)
-        }
-        else {
-            console.log("Closed Connection Successfully ");
-        }
-    }))
+    db.closeDBConnection().then(data=>{
+        console.log("closed Connection Successfully")
+    }).catch(err=>{
+        console.error("Unable to Close ",err)
+    })
+    // mongoose.connection.close((err => {
+    //     if (err) {
+    //         console.error("Unable to close Connection ", err)
+    //     }
+    //     else {
+    //         console.log("Closed Connection Successfully ");
+    //     }
+    // }))
 }
 
 function createEmployee(employeeObj, callback) 
 {
-    getDbConnection(function (err) {
-        if (err) {
-            return callback(err);
-        }
-        var employees = new Array();
-        var emp1 = new Employee(employeeObj);
-        employees.push(emp1);
+    db.openDBConnection().then(data=>{
+        empDao.createEmployee(employeeObj).then(emp1=>{
+            closeDBConnection();
+            callback(null,emp1);
+        }).catch(err=>{
+            closeDBConnection();
+            callback(err);
+        })
+    }).catch(err=>{
+        callback(err)
+    })
+
+    // getDbConnection(function (err) {
+    //     if (err) {
+    //         return callback(err);
+    //     }
+    //     var employees = new Array();
+    //     var emp1 = new Employee(employeeObj);
+    //     employees.push(emp1);
         
-        Employee.create(employees, function (err, res) {
-            CommonFunction(err, res, callback);
-        });
-    });
+    //     Employee.create(employees, function (err, res) {
+    //         CommonFunction(err, res, callback);
+    //     });
+    // });
 }
 
 function getAllEmployee(callback) {
+
+    db.openDBConnection().then(data=>{
+        empDao.getAllEmployees().then(data=>{
+            callback(null,data);
+        }).catch(err1=>{
+            callback(err);
+        })
+    }).catch(err=>{
+        callback(err)
+    })
     //var employees = new Array();
     //employees.push(employeeObj);
-    getDbConnection((err) => {
-        if (err) {
-            return callback(err);
-        }
-        Employee.find({}, function (err, employees) {
-            if (err) {
-                return callback(err, null)
-            }
-            else {
-                var userMap = {};
+    // getDbConnection((err) => {
+    //     if (err) {
+    //         return callback(err);
+    //     }
+    //     Employee.find({}, function (err, employees) {
+    //         if (err) {
+    //             return callback(err, null)
+    //         }
+    //         else {
+    //             var userMap = {};
 
-                employees.forEach(function (employee) {
-                    userMap[employee._id] = employee;
-                });
-                closeDBConnection();
-                callback(null, employees);
-            }
-        });
-    })
+    //             employees.forEach(function (employee) {
+    //                 userMap[employee._id] = employee;
+    //             });
+    //             closeDBConnection();
+    //             callback(null, employees);
+    //         }
+    //     });
+    // })
 
 }
 
