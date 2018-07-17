@@ -22,6 +22,7 @@ function updateEmployee(req, res) {
         salary: req.body.salary,
     }
     employeeService.updateEmployee(employee, function (err, data) {
+        console.log(data);
         commonFunction(req,res,err,data);
     })
 }
