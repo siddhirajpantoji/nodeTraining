@@ -1,4 +1,4 @@
-var fs = require('fs');
+var fs = require('./node_modules/fs');
 console.log("Before  File read")
 function callbackFunction (err,data){
     if(err){
