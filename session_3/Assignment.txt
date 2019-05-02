@@ -1,0 +1,13 @@
+// Install yargs package and write a command line program for doing follwing.
+Create a json File on local that is called as books.json. This will contain an array of books
+[{
+    title:"Da Vinci Code ",
+    "author":"Dan Brown"
+}]
+
+Create a CRUD Program that accepts two arguments of title and author from cmd and Performs operation 
+1. Read -- accepts title of book and returns object 
+2. Write -- accepts title and author and writes it into json and titles are to be  unique 
+3. Update -- Update Author of book based on Title 
+4. Delete - Delete  a book based on title 
+5. Read All - Will return all books in json 
