@@ -1,0 +1,16 @@
+{
+  "name": "session_4",
+  "version": "1.0.0",
+  "description": "1.Normal Server\r 2. Static file hosting or static website \r 3. Intro to middleware ( body-parser)\r 4. Routes of Express \r 5. Layering of code with controller , service , dao model \r 6. Process env and configurations \r 7. Database ( Postgres )\r 8. Express as a middleware and implementations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4"
+  }
+}
