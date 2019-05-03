@@ -1,5 +1,6 @@
 const dao = require('./dao')
 var getDate = (callback)=>{
+    
     dao.getDate((err,data)=>{
         result = undefined;
         if(err){
