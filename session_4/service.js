@@ -2,20 +2,17 @@ const dao = require('./dao')
 var getDate = (callback)=>{
     
     dao.getDate((err,data)=>{
-        result = undefined;
         if(err){
-            result = {
+            callback({
                 status: 500,
                 err:err
-            }
-            callback(result)
+            })
         }
         else{
-            result = {
+            callback( null, {
                 status:200, 
                 data: data
-            }
-            callback( null, result);
+            })
         }
     });
 }
