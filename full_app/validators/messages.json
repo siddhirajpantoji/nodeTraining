@@ -1,0 +1,4 @@
+{
+    "USERNAME_REQUIRED":"username is missing ",
+    "USERNAME_CANNOT_BE_EMPTY" :"Username cannot be empty "
+}
