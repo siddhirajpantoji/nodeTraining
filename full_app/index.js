@@ -1,10 +1,12 @@
 // This will start our server on local 
+require('dotenv').config();
 var app = require('./app');
-app.listen(3000, (err)=>{
+const PORT = process.env.PORT;
+app.listen(PORT, (err)=>{
     if(err){
-        console.log("Unable to start Server on Port 3000")
+        console.log("Unable to start Server on Port"+PORT, err)
     }
     else{
-        console.log("Server Started on port 3000")
+        console.log("Server Started on port "+PORT)
     }
 });

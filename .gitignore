@@ -4,3 +4,4 @@ session_4/node_modules
 session_4/package-lock.json
 full_app/node_modules
 full_app/package-lock.json
+full_app/.env
