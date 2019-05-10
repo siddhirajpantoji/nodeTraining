@@ -1,0 +1,19 @@
+# serverless.yml
+
+service: express-app
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10.15
+  stage: dev
+  region: us-east-1
+
+functions:
+  app:
+    handler: handler.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
