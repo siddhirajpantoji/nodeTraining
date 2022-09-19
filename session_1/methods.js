@@ -44,5 +44,24 @@ add(2, 3, (result) => {
     console.log(result)
 })
 
-process.stdout.write("For Writing in single Line ")
-process.stdout.write("For Writing in single Line ")
+// process.stdout.write("For Writing in single Line ")
+// process.stdout.write("For Writing in single Line ")
+
+function divide(num1, num2 , res){
+    if(num2 === 0 ){
+        res("Cannot Divide by Zero ")
+        return
+    }
+    let result = num1/num2
+    res(null, result)
+}
+
+divide(25,0, (err, result)=>{
+    if(err){
+        console.log("Error Occured While Calling Divide ")
+        console.log(err)
+    }
+    else{
+        console.log("Result is "+result)
+    }
+})
