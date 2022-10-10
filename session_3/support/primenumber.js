@@ -1,3 +1,4 @@
+console.log(__filename);
 function isPrimeNumber(num) {
     // Code your logic here for Prime number and lets code together 
     for(  i = 0 ; i < num ; i++){

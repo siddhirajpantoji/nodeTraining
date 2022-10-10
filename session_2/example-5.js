@@ -1,1 +1,0 @@
-const prime = require('./example-3');
