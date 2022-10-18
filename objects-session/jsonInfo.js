@@ -1,0 +1,38 @@
+let obj = {
+    "name": "David ",
+    "department": "HR",
+    "address": {
+        "city": "Navi Mumbai",
+        "pincode": "",
+        "Town": "Koparkhairane"
+    },
+    "hiringPerson": function () {
+        console.log(this.name + " is Hiring")
+    }
+}
+console.log(obj)
+console.log(obj.address.Town)
+let val = obj.address1
+if (val) {
+    console.log("Value found")
+}
+else {
+    console.log("Property not found")
+}
+let keys = Object.keys(obj)
+console.log(keys)
+val = keys.includes("name1")
+console.log(val)
+
+let propname = "lambi"
+val = obj[propname]
+if(val){
+    console.log("Value Found")
+}
+else{
+    console.log("Value Not found")
+}
+
+obj.name2 = "Darwins"
+obj[propname] = "bas Itna sa Khwab hai "
+console.log(obj)
