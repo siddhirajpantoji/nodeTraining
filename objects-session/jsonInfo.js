@@ -21,11 +21,11 @@ else {
 }
 let keys = Object.keys(obj)
 console.log(keys)
-val = keys.includes("name1")
+val = keys.includes("name")
 console.log(val)
 
-let propname = "lambi"
-val = obj[propname]
+let keyName = process.argv[2]
+val = obj[keyName]
 if(val){
     console.log("Value Found")
 }
@@ -34,5 +34,5 @@ else{
 }
 
 obj.name2 = "Darwins"
-obj[propname] = "bas Itna sa Khwab hai "
+obj[keyName] = "bas Itna sa Khwab hai "
 console.log(obj)
