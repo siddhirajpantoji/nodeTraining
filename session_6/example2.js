@@ -8,12 +8,7 @@
 
   const {Pool} = require ("pg");
   const pool = new Pool({
-    user: 'XXXXXXXX',
-    host: 'localhost',
-    database: 'XXXXXX',
-    password: 'XXXXX',
-    port: 5432,
-    idleTimeoutMillis:3000
+
   });
   
   //console.log(process.env);
