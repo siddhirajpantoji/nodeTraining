@@ -1,0 +1,15 @@
+{
+  "name": "session_2",
+  "version": "1.0.0",
+  "description": "Accept Number from Command Line from user \r Check if the number is prime or not with recursive code inside a seperate file \r Function should be consumed in diffrent file.",
+  "main": "primeNumber.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^17.6.2"
+  }
+}

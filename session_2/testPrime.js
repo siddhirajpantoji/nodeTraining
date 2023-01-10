@@ -1,3 +1,4 @@
+
 const primeNumber= require('./primeNumber')
 
 const isNumberPrime = primeNumber.primeCheck
